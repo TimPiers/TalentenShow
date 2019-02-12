@@ -1,11 +1,12 @@
 <body>
-  <nav class="navbar navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand text-white"><i class="fa fa-music"></i> Talenten Show</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar mr-auto"></ul>
+      <ul class="navbar-nav">
         <li class="nav-item">
           <a class="nav-link" href="/web">Home</a>
         </li>
@@ -22,6 +23,52 @@
     </div>
   </nav>
 
-
   <router-outlet></router-outlet>
-</body>
+
+  <!-- Footer -->
+  <footer class="footer">
+
+    <!-- Footer Links -->
+    <div class="container-fluid text-center text-md-left">
+
+      <!-- Grid row -->
+      <div class="row">
+
+        <!-- Grid column -->
+        <div class="col-md-6 mt-md-0 mt-3">
+
+          <!-- Content -->
+          <h5 class="text-uppercase">Talenten show</h5>
+          <p>Talentenjacht waarin iedereen tussen de 15 en 28 jaar kans maakt om hét nieuwe popidool van Nederland te worden.
+          De jury, bestaande uit Martijn Krabbé, Jamai Loman, Eva Simons en Ronald Molendijk,
+          beoordeelt de kandidaten op hun zangkwaliteiten, uitstraling en verborgen talenten.</p>
+
+        </div>
+
+        <!-- Grid column -->
+        <div class="col-md-6 mt-md-0 mt-3">
+
+          <!-- Content -->
+          <h5 class="text-uppercase">Site Map</h5>
+          <a href="/web">Home</a><br />
+          <a href="/web/events">Evenementen</a><br />
+          <a href="/web/news">News</a><br />
+          <a href="/web/events/register">Registreer Jezelf</a><br />
+
+        </div>
+
+
+      </div>
+      <!-- Grid row -->
+
+    </div>
+    <!-- Copyright -->
+    <div class="footer-copyright text-center">
+      © 2018 Copyright:
+      <a class="text-danger" href="https://timpiers.net"> With <i class="fa fa-heart"></i> by Tim Piers</a>
+    </div>
+    <!-- Copyright -->
+
+  </footer>
+
+  </body>

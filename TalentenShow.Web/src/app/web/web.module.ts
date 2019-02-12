@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { WebRoutingModule } from './web-routing.module';
 import { WebComponent } from './web.component';
+import { WebHomePageComponent } from './web-home-page/web-home-page.component';
 
 @NgModule({
   declarations: [
-    WebComponent
+    WebComponent,
+    WebHomePageComponent
   ],
   imports: [
     BrowserModule,

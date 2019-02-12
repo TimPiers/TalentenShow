@@ -5,6 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace TalentenShow.Repository {
-    class BaseRepository {
+    public abstract class BaseRepository <TEntity> where TEntity : class
+    {
+
+        public TalentenShowContext CreateContext()
+        {
+            return new TalentenShowContext();
+        }
+
     }
 }

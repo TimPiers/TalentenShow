@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[News]
+﻿CREATE TABLE [TalentShow].[News]
 (
     [Id] INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
     [Title] VARCHAR(255) NOT NULL,

@@ -41,11 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business\INewsService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\INewsRepository.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Business\" />
-    <Folder Include="Repository\" />
+    <ProjectReference Include="..\TalentenShow.Domain.Models\TalentenShow.Domain.Models.csproj">
+      <Project>{9539C3C7-3037-4EE6-AA0E-2691D28B6691}</Project>
+      <Name>TalentenShow.Domain.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

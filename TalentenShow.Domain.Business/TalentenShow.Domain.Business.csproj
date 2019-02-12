@@ -41,7 +41,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="News\NewsService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TalentenShow.Domain.Business.Contracts\TalentenShow.Domain.Business.Contracts.csproj">
+      <Project>{111F6E92-564B-49A4-8444-C0AA796290FA}</Project>
+      <Name>TalentenShow.Domain.Business.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TalentenShow.Domain.Models\TalentenShow.Domain.Models.csproj">
+      <Project>{9539C3C7-3037-4EE6-AA0E-2691D28B6691}</Project>
+      <Name>TalentenShow.Domain.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TalentenShow.Repository\TalentenShow.Repository.csproj">
+      <Project>{4EDE0387-448B-413F-9874-0419B071D90C}</Project>
+      <Name>TalentenShow.Repository</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

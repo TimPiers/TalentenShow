@@ -59,9 +59,14 @@
     <Folder Include="Properties" />
     <Folder Include="Admin" />
     <Folder Include="TalentShow" />
+    <Folder Include="Views" />
+    <Folder Include="Functions" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Schemas.sql" />
     <Build Include="TalentShow\News.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="TalentenShow.Database.publish.xml" />
   </ItemGroup>
 </Project>
