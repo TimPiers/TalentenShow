@@ -1,0 +1,3 @@
+﻿CREATE SCHEMA [Admin]
+GO
+CREATE SCHEMA [TalentShow]
