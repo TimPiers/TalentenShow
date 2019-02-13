@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NewsService } from '../../core/services/news.service';
 import { News } from '../../shared/models/news.model';
+import { EventService } from '../../core/services/event.service';
 
 @Component({
   selector: 'app-web-home-page',
@@ -11,11 +12,15 @@ export class WebHomePageComponent implements OnInit {
 
   latestNews: News;
 
-  constructor(private newsService: NewsService) { }
+  constructor(private newsService: NewsService,
+              private eventService: EventService) { }
 
   ngOnInit() {
     this.newsService.getLatestNews().subscribe(news => {
       this.latestNews = news;
+    });
+    this.eventService.getAllActiveEvents().subscribe(events => {
+      console.log(events);
     });
   }
 

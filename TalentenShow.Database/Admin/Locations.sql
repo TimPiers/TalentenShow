@@ -1,0 +1,8 @@
+﻿CREATE TABLE [Admin].[Locations]
+(
+    [Id] INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+    [Name] VARCHAR(255) NOT NULL,
+    [Adress] VARCHAR(255) NOT NULL,
+    [PostalCode] NVARCHAR(6) NOT NULL,
+    [Place] VARCHAR(255) NOT NULL
+)

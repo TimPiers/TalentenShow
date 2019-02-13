@@ -4,6 +4,9 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TalentenShow.Domain.Models.Events;
+using TalentenShow.Domain.Models.Locations;
+using TalentenShow.Domain.Models.Themes;
 
 namespace TalentenShow.Repository
 {
@@ -21,6 +24,14 @@ namespace TalentenShow.Repository
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<Domain.Models.News.News>().ToTable("News", "TalentShow");
+            modelBuilder.Entity<Event>().ToTable("Events", "TalentShow");
+            modelBuilder.Entity<Location>().ToTable("Location", "Admin");
+            modelBuilder.Entity<Theme>().ToTable("Themes", "Admin");
+
+            modelBuilder.Entity<Event>()
+                .HasRequired<Location>(e => e.Location)
+                .WithMany(l => l.Events)
+                .HasForeignKey<int>(e => e.LocationId);
         }
 
     }

@@ -109,10 +109,12 @@
     <TypeScriptCompile Include="src\app\app.component.ts" />
     <TypeScriptCompile Include="src\app\app.module.ts" />
     <TypeScriptCompile Include="src\app\core\core.module.ts" />
+    <TypeScriptCompile Include="src\app\core\services\event.service.ts" />
     <TypeScriptCompile Include="src\app\core\services\news.service.ts" />
     <TypeScriptCompile Include="src\app\core\services\base.service.ts" />
     <TypeScriptCompile Include="src\app\core\services\session-storage.service.ts" />
     <TypeScriptCompile Include="src\app\shared\models\base.model.ts" />
+    <TypeScriptCompile Include="src\app\shared\models\event.model.ts" />
     <TypeScriptCompile Include="src\app\shared\models\news.model.ts" />
     <TypeScriptCompile Include="src\app\web\web-home-page\web-home-page.component.ts" />
     <TypeScriptCompile Include="src\app\web\web-routing.module.ts" />

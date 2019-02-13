@@ -9,12 +9,12 @@ using TalentenShow.Domain.Models.News;
 using TalentenShow.Repository.News;
 
 namespace TalentenShow.WebApi.Controllers {
-    public class AppVersionController : ApiController
+    public class NewsController : ApiController
     {
 
         private INewsService _service;
 
-        public AppVersionController()
+        public NewsController()
         {
             _service = new NewsService(new NewsRepository());
         }

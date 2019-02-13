@@ -1,0 +1,6 @@
+﻿CREATE TABLE [Admin].[Themes]
+(
+    [Id] INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+    [Name] VARCHAR(255) NOT NULL,
+    [Description] VARCHAR(1000) NOT NULL
+)

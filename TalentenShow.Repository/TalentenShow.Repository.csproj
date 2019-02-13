@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseRepository.cs" />
+    <Compile Include="Events\EventRepository.cs" />
     <Compile Include="News\NewsRepository.cs" />
     <Compile Include="TalentenShowContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

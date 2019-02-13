@@ -65,8 +65,8 @@
   <ItemGroup>
     <Build Include="Schemas.sql" />
     <Build Include="TalentShow\News.sql" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="TalentenShow.Database.publish.xml" />
+    <Build Include="Admin\Locations.sql" />
+    <Build Include="Admin\Themes.sql" />
+    <Build Include="TalentShow\Events.sql" />
   </ItemGroup>
 </Project>
