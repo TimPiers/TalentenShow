@@ -16,7 +16,6 @@ namespace TalentenShow.Domain.Models.Locations
         public string PostalCode { get; set; }
         public string Place { get; set; }
 
-        public List<Event> Events { get; set; }
 
     }
 }
