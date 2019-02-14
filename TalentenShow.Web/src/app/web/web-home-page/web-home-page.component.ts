@@ -11,6 +11,7 @@ import { EventService } from '../../core/services/event.service';
 export class WebHomePageComponent implements OnInit {
 
   latestNews: News;
+  activeEvents: Event[];
 
   constructor(private newsService: NewsService,
               private eventService: EventService) { }
@@ -20,7 +21,7 @@ export class WebHomePageComponent implements OnInit {
       this.latestNews = news;
     });
     this.eventService.getAllActiveEvents().subscribe(events => {
-      console.log(events);
+      this.activeEvents = events;
     });
   }
 
@@ -34,6 +35,18 @@ export class WebHomePageComponent implements OnInit {
     } else {
       return content;
     }
+  }
+
+  removeTimeFromDate(date: string) {
+    return date.substring(0, 10);
+  }
+
+  calcDateDifferenceInDays(dateString: string) {
+    let date: Date = new Date(dateString);
+    let today = new Date();
+    let diff: number = Math.abs(date.getTime() - today.getTime());
+    let diffDays: number = Math.ceil(diff / (1000 * 3600 * 24));
+    return diffDays;
   }
 
 }

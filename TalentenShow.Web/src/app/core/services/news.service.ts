@@ -20,4 +20,8 @@ export class NewsService extends BaseService {
     return this.httpClient.get<News>(`${this.env.apiUrl}/news/latest`);
   }
 
+  getNewById(newsId: number) {
+    return this.httpClient.get<News>(`${this.env.apiUrl}/news/get/${newsId}`);
+  }
+
 }

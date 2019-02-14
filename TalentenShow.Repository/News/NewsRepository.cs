@@ -39,5 +39,19 @@ namespace TalentenShow.Repository.News
             }
             return result;
         }
+
+        public Domain.Models.News.News GetNewsById(int newsId)
+        {
+            Domain.Models.News.News result = null;
+
+            using (var context = CreateContext())
+            {
+                result = context.Set<Domain.Models.News.News>()
+               .AsNoTracking()
+               .Where(n => n.Id == newsId)
+               .FirstOrDefault();
+            }
+            return result;
+        }
     }
 }

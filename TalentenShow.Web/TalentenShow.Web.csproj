@@ -71,6 +71,8 @@
   <ItemGroup>
     <Content Include="src\app\app.component.css" />
     <Content Include="src\app\app.component.html" />
+    <Content Include="src\app\web\news-page\news-page.component.css" />
+    <Content Include="src\app\web\news-page\news-page.component.html" />
     <Content Include="src\app\web\web-home-page\web-home-page.component.css" />
     <Content Include="src\app\web\web-home-page\web-home-page.component.html" />
     <Content Include="src\app\web\web.component.css" />
@@ -116,6 +118,7 @@
     <TypeScriptCompile Include="src\app\shared\models\base.model.ts" />
     <TypeScriptCompile Include="src\app\shared\models\event.model.ts" />
     <TypeScriptCompile Include="src\app\shared\models\news.model.ts" />
+    <TypeScriptCompile Include="src\app\web\news-page\news-page.component.ts" />
     <TypeScriptCompile Include="src\app\web\web-home-page\web-home-page.component.ts" />
     <TypeScriptCompile Include="src\app\web\web-routing.module.ts" />
     <TypeScriptCompile Include="src\app\web\web.component.ts" />

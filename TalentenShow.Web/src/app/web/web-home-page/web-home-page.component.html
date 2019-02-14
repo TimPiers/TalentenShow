@@ -12,6 +12,26 @@
     <hr />
     <h4>{{ latestNews.Title }}</h4>
     <p class="lead">{{ shortenDescription(latestNews.Content) }}</p>
-    <a href="#" class="btn btn-primary mt-3">Lees meer</a>
+    <a href="web/news/{{ latestNews.Id }}" class="btn btn-primary mt-3">Lees meer</a>
   </div>
 </div>
+
+<div class="row mt-3 mb-3 ml-3 mr-3" *ngIf="activeEvents">
+  <div class="col-12 col-md-6 col-lg-4 mt-2" *ngFor="let event of activeEvents">
+    <div class="card">
+      <div class="card-header">
+        Evenement
+      </div>
+      <div class="card-body">
+        <h5 class="card-title mb-0">{{ event.Name }}</h5>
+        <p class="mt-0 mb-0 text-muted">
+          {{ removeTimeFromDate(event.EventStartDate) }} tot {{ removeTimeFromDate(event.EventEndDate) }}
+        </p>
+        <p class="text-danger mt-0 bold">Nog {{ calcDateDifferenceInDays(event.EntryEndDate) }} dagen om jezelf aan te melden!</p>
+        <p class="card-text">{{ event.Description }}</p>
+        <a href="#" class="btn btn-primary">Bekijk dit Evenement</a>
+      </div>
+    </div>
+  </div>
+</div>
+

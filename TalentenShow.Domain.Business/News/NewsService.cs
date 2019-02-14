@@ -29,5 +29,10 @@ namespace TalentenShow.Domain.Business.News
         {
             return _repository.GetLatestNews();
         }
+
+        public Models.News.News GetNewsById(int newsId)
+        {
+            return _repository.GetNewsById(newsId);
+        }
     }
 }

@@ -40,5 +40,16 @@ namespace TalentenShow.WebApi.Controllers {
 
         }
 
+        /// <summary>
+        /// Get all news.
+        /// </summary>
+        [Route("api/news/get/{newsId}")]
+        [HttpGet]
+        public News GetNewsById(int newsId)
+        {
+            return _service.GetNewsById(newsId);
+
+        }
+
     }
 }

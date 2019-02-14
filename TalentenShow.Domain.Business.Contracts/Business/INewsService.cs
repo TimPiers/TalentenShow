@@ -12,6 +12,7 @@ namespace TalentenShow.Domain.Business.Contracts.Business
 
         List<News> GetAllNews();
         News GetLatestNews();
+        News GetNewsById(int newsId);
 
     }
 }

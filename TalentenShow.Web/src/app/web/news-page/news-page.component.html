@@ -1,0 +1,19 @@
+<div class="news">
+
+  <div class="card ml-5 mr-5 mt-5 mb-5" *ngIf="news; else itemNotFound">
+    <div class="card-body">
+      <h2 class="card-title mb-0">{{ news.Title }}</h2>
+      <p class="card-text">{{ news.Content }}</p>
+    </div>
+  </div>
+
+  <ng-template #itemNotFound>
+    <div class="card ml-5 mr-5 mt-5 mb-5">
+      <div class="card-body">
+        <h2 class="card-title mb-0 text-danger bold"><i class="fa fa-exclamation-circle"></i> Oeps</h2>
+        <p class="text-danger">Helaas wij konden dit nieuws artikel niet vinden kijk of u de juiste link heeft gebruikt.</p>
+      </div>
+    </div>
+  </ng-template>
+
+</div>
