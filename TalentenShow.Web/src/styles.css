@@ -2,3 +2,7 @@
 .bold {
   font-weight: bold;
 }
+
+.row {
+  margin: 0;
+}

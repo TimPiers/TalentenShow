@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NewsService } from '../../core/services/news.service';
 import { News } from '../../shared/models/news.model';
 import { EventService } from '../../core/services/event.service';
+import { removeTimeFromDate, calcDateDifferenceInDays } from '../../shared/functions/date-helper.function';
+import { TalentEvent } from '../../shared/models/talent-event.model';
 
 @Component({
   selector: 'app-web-home-page',
@@ -11,7 +13,7 @@ import { EventService } from '../../core/services/event.service';
 export class WebHomePageComponent implements OnInit {
 
   latestNews: News;
-  activeEvents: Event[];
+  activeEvents: TalentEvent[];
 
   constructor(private newsService: NewsService,
               private eventService: EventService) { }
@@ -38,15 +40,11 @@ export class WebHomePageComponent implements OnInit {
   }
 
   removeTimeFromDate(date: string) {
-    return date.substring(0, 10);
+    return removeTimeFromDate(date);
   }
 
   calcDateDifferenceInDays(dateString: string) {
-    let date: Date = new Date(dateString);
-    let today = new Date();
-    let diff: number = Math.abs(date.getTime() - today.getTime());
-    let diffDays: number = Math.ceil(diff / (1000 * 3600 * 24));
-    return diffDays;
+    return calcDateDifferenceInDays(dateString);
   }
 
 }

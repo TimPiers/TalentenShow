@@ -32,5 +32,16 @@ namespace TalentenShow.WebApi.Controllers {
             return _service.GetAllActiveEvents();
         }
 
+        /// <summary>
+        /// Get event by Id
+        /// </summary>
+        [Route("api/events/get/{eventId}")]
+        [HttpGet]
+        public Event GetNewsById(int eventId)
+        {
+            return _service.GetEventById(eventId);
+
+        }
+
     }
 }

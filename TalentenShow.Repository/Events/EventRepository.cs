@@ -29,5 +29,23 @@ namespace TalentenShow.Repository.Events
 
             return result;
         }
+
+        public Event GetEventById(int eventId)
+        {
+            Event result = null;
+
+            using (var context = CreateContext())
+            {
+                result = context.Set<Event>()
+                .AsNoTracking()
+                .Include(x => x.Location)
+                .Include(x => x.Theme)
+                .Where(ev => ev.Id == eventId)
+                .OrderByDescending(ev => ev.EventEndDate)
+                .FirstOrDefault();
+            }
+
+            return result;
+        }
     }
 }

@@ -30,7 +30,7 @@ namespace TalentenShow.WebApi.Controllers {
         }
 
         /// <summary>
-        /// Get all news.
+        /// Get all latest news.
         /// </summary>
         [Route("api/news/latest")]
         [HttpGet]
@@ -41,7 +41,7 @@ namespace TalentenShow.WebApi.Controllers {
         }
 
         /// <summary>
-        /// Get all news.
+        /// Get news by Id
         /// </summary>
         [Route("api/news/get/{newsId}")]
         [HttpGet]

@@ -68,5 +68,7 @@
     <Build Include="Admin\Locations.sql" />
     <Build Include="Admin\Themes.sql" />
     <Build Include="TalentShow\Events.sql" />
+    <Build Include="TalentShow\Participants.sql" />
+    <Build Include="TalentShow\ParticipantEvent.sql" />
   </ItemGroup>
 </Project>

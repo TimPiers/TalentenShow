@@ -69,10 +69,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="src\app\admin\admin-home-page\admin-home-page.component.css" />
+    <Content Include="src\app\admin\admin-home-page\admin-home-page.component.html" />
+    <Content Include="src\app\admin\admin.component.css" />
+    <Content Include="src\app\admin\admin.component.html" />
+    <Content Include="src\app\admin\events\event-page\event-page.component.css" />
+    <Content Include="src\app\admin\events\event-page\event-page.component.html" />
+    <Content Include="src\app\admin\events\events.component.css" />
+    <Content Include="src\app\admin\events\events.component.html" />
+    <Content Include="src\app\admin\events\location-page\location-page.component.css" />
+    <Content Include="src\app\admin\events\location-page\location-page.component.html" />
+    <Content Include="src\app\admin\events\theme-page\theme-page.component.css" />
+    <Content Include="src\app\admin\events\theme-page\theme-page.component.html" />
     <Content Include="src\app\app.component.css" />
     <Content Include="src\app\app.component.html" />
+    <Content Include="src\app\web\event-page\event-page.component.css" />
+    <Content Include="src\app\web\event-page\event-page.component.html" />
     <Content Include="src\app\web\news-page\news-page.component.css" />
     <Content Include="src\app\web\news-page\news-page.component.html" />
+    <Content Include="src\app\web\view-event-page\view-event-page.component.css" />
+    <Content Include="src\app\web\view-event-page\view-event-page.component.html" />
     <Content Include="src\app\web\web-home-page\web-home-page.component.css" />
     <Content Include="src\app\web\web-home-page\web-home-page.component.html" />
     <Content Include="src\app\web\web.component.css" />
@@ -107,6 +123,14 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="src\app\admin\admin-home-page\admin-home-page.component.ts" />
+    <TypeScriptCompile Include="src\app\admin\admin-routing.module.ts" />
+    <TypeScriptCompile Include="src\app\admin\admin.component.ts" />
+    <TypeScriptCompile Include="src\app\admin\admin.module.ts" />
+    <TypeScriptCompile Include="src\app\admin\events\event-page\event-page.component.ts" />
+    <TypeScriptCompile Include="src\app\admin\events\events.component.ts" />
+    <TypeScriptCompile Include="src\app\admin\events\location-page\location-page.component.ts" />
+    <TypeScriptCompile Include="src\app\admin\events\theme-page\theme-page.component.ts" />
     <TypeScriptCompile Include="src\app\app-routing.module.ts" />
     <TypeScriptCompile Include="src\app\app.component.ts" />
     <TypeScriptCompile Include="src\app\app.module.ts" />
@@ -115,10 +139,13 @@
     <TypeScriptCompile Include="src\app\core\services\news.service.ts" />
     <TypeScriptCompile Include="src\app\core\services\base.service.ts" />
     <TypeScriptCompile Include="src\app\core\services\session-storage.service.ts" />
+    <TypeScriptCompile Include="src\app\shared\functions\date-helper.function.ts" />
     <TypeScriptCompile Include="src\app\shared\models\base.model.ts" />
-    <TypeScriptCompile Include="src\app\shared\models\event.model.ts" />
+    <TypeScriptCompile Include="src\app\shared\models\talent-event.model.ts" />
     <TypeScriptCompile Include="src\app\shared\models\news.model.ts" />
+    <TypeScriptCompile Include="src\app\web\event-page\event-page.component.ts" />
     <TypeScriptCompile Include="src\app\web\news-page\news-page.component.ts" />
+    <TypeScriptCompile Include="src\app\web\view-event-page\view-event-page.component.ts" />
     <TypeScriptCompile Include="src\app\web\web-home-page\web-home-page.component.ts" />
     <TypeScriptCompile Include="src\app\web\web-routing.module.ts" />
     <TypeScriptCompile Include="src\app\web\web.component.ts" />
@@ -133,7 +160,6 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="src\app\admin\" />
     <Folder Include="src\app\shared\components\" />
   </ItemGroup>
   <PropertyGroup>

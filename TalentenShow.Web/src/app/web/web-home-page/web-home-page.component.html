@@ -29,7 +29,7 @@
         </p>
         <p class="text-danger mt-0 bold">Nog {{ calcDateDifferenceInDays(event.EntryEndDate) }} dagen om jezelf aan te melden!</p>
         <p class="card-text">{{ event.Description }}</p>
-        <a href="#" class="btn btn-primary">Bekijk dit Evenement</a>
+        <a href="web/events/{{ event.Id }}" class="btn btn-primary">Bekijk dit Evenement</a>
       </div>
     </div>
   </div>
