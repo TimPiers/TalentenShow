@@ -1,6 +1,6 @@
 <div class="row mt-3">
   <div class="col-12">
-    <button class="btn btn-primary mr-2">Create location</button>
+    <button class="btn btn-primary mr-2" data-toggle="modal" data-target="#updateModal" (click)="createNewLocation()">Create location</button>
     <button class="btn btn-primary mr-2" (click)="getLocations()"><i class="fa fa-refresh"></i> Refresh locations</button>
     <div class="col-sm-4" style="display:inline-block">
       <div class="input-group">
@@ -25,8 +25,8 @@
     </thead>
     <tbody *ngIf="filteredLocations">
       <tr *ngFor="let location of filteredLocations">
-        <td style="width: 30px;"><i class="fa fa-edit clickable"></i></td>
-        <td style="width: 30px;"><i class="fa fa-trash clickable"></i></td>
+        <td style="width: 30px;"><i class="fa fa-edit clickable" data-toggle="modal" data-target="#updateModal" (click)="createUpdateLocation(location)"></i></td>
+        <td style="width: 30px;"><i class="fa fa-trash clickable" (click)="deleteLocation(location)"></i></td>
         <td>{{ location.Id }}</td>
         <td>{{ location.Name }}</td>
         <td>{{ location.Adress }}</td>
@@ -35,4 +35,48 @@
       </tr>
     </tbody>
   </table>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="updateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{ title }}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"><i class="fa fa-times-circle"></i></span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="form">
+
+          <input type="text" class="form-control" formControlName="Id" id="inputId" hidden>
+
+          <div class="form-group">
+            <label for="inputName">Name</label>
+            <input type="text" class="form-control" formControlName="Name" id="inputName" placeholder="Voer een naam in...">
+          </div>
+
+          <div class="form-group">
+            <label for="inputName">Adress</label>
+            <input type="text" class="form-control" formControlName="Adress" id="inputAdress" placeholder="Voer een adres in...">
+          </div>
+
+          <div class="form-group">
+            <label for="inputName">Postalcode</label>
+            <input type="text" class="form-control" formControlName="PostalCode" id="inputPostalCode" placeholder="Voer een postcode in...">
+          </div>
+
+          <div class="form-group">
+            <label for="inputName">Place</label>
+            <input type="text" class="form-control" formControlName="Place" id="inputPlace" placeholder="Voer een plaats in...">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Discard</button>
+        <button type="submit" class="btn btn-primary" data-dismiss="modal" (click)="saveLocation()">Save Theme</button>
+      </div>
+    </div>
+  </div>
 </div>

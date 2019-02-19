@@ -42,11 +42,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business\IEventService.cs" />
+    <Compile Include="Business\IThemeService.cs" />
     <Compile Include="Business\ILocationService.cs" />
     <Compile Include="Business\INewsService.cs" />
     <Compile Include="Business\IPersonService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\IEventRepository.cs" />
+    <Compile Include="Repository\IThemeRepository.cs" />
     <Compile Include="Repository\ILocationRepository.cs" />
     <Compile Include="Repository\INewsRepository.cs" />
     <Compile Include="Repository\IPersonRepository.cs" />

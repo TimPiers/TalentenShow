@@ -4,14 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TalentenShow.Domain.Models.Locations;
+using TalentenShow.Domain.Models.Themes;
 
 namespace TalentenShow.Domain.Business.Contracts.Repository
 {
-    public interface ILocationRepository
+    public interface IThemeRepository
     {
 
-        List<Location> GetAllLocations();
-        int SaveLocation(Location location);
-        int DeleteLocation(Location location);
+        List<Theme> GetAllThemes();
+        int SaveTheme(Theme theme);
+        int DeleteTheme(Theme theme);
+
     }
 }

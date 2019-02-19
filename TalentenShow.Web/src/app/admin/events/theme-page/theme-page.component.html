@@ -1,3 +1,69 @@
-<p>
-  theme-page works!
-</p>
+<div class="row mt-3">
+  <div class="col-12">
+    <button class="btn btn-primary mr-2" data-toggle="modal" data-target="#updateModal" (click)="createNewTheme()">Create theme</button>
+    <button class="btn btn-primary mr-2" (click)="getThemes()"><i class="fa fa-refresh"></i> Refresh themes</button>
+    <div class="col-sm-4" style="display:inline-block">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text"><i class="fa fa-search"></i></div>
+        </div>
+        <input type="text" class="form-control" id="inputSearch" placeholder="Zoeken..." (keyup)="search(inputSearch.value)" (blur)="search(inputSearch.value)" #inputSearch>
+      </div>
+    </div>
+  </div>
+  <table class="table mt-2">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Description</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="filteredThemes">
+      <tr *ngFor="let theme of filteredThemes">
+        <td style="width: 30px;"><i class="fa fa-edit clickable" data-toggle="modal" data-target="#updateModal" (click)="createUpdateTheme(theme)"></i></td>
+        <td style="width: 30px;"><i class="fa fa-trash clickable" (click)="deleteTheme(theme)"></i></td>
+        <td>{{ theme.Id }}</td>
+        <td>{{ theme.Name }}</td>
+        <td>{{ theme.Description }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="updateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{ title }}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"><i class="fa fa-times-circle"></i></span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="form">
+
+          <input type="text" class="form-control" formControlName="Id" id="inputId" hidden>
+
+          <div class="form-group">
+            <label for="inputName">Name</label>
+            <input type="text" class="form-control" formControlName="Name" id="inputName" placeholder="Voer een naam in...">
+          </div>
+
+          <div class="form-group">
+            <label for="inputDescription">Beschrijving</label>
+            <textarea class="form-control" formControlName="Description" id="inputDescription" rows="6" placeholder="Voer een beschrijving in..."></textarea>
+          </div>
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Discard</button>
+        <button type="submit" class="btn btn-primary" data-dismiss="modal" (click)="saveTheme()">Save Theme</button>
+      </div>
+    </div>
+  </div>
+</div>

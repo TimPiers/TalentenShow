@@ -16,5 +16,11 @@ export class LocationService extends BaseService {
     return this.httpClient.get<Array<Location>>(`${this.env.apiUrl}/locations/all`);
   }
 
+  saveLocation(location: Location) {
+    return this.httpClient.post<Location>(`${this.env.apiUrl}/locations/save`, location);
+  }
 
+  deleteLocation(location: Location) {
+    return this.httpClient.post<Location>(`${this.env.apiUrl}/locations/delete`, location);
+  }
 }

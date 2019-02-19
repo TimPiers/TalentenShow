@@ -36,5 +36,24 @@ namespace TalentenShow.WebApi.Controllers {
             return _service.GetAllLocations();
         }
 
+        /// <summary>
+        /// Save a location
+        /// </summary>
+        [Route("api/locations/save")]
+        [HttpPost]
+        public int SaveLocation(Location location)
+        {
+            return _service.SaveLocation(location);
+        }
+
+        /// <summary>
+        /// Delete a location
+        /// </summary>
+        [Route("api/locations/delete")]
+        [HttpPost]
+        public int DeleteLocation(Location location)
+        {
+            return _service.DeleteLocation(location);
+        }
     }
 }
