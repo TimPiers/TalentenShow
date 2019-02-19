@@ -24,6 +24,11 @@ namespace TalentenShow.Domain.Business.Events
             return _repository.GetAllActiveEvents();
         }
 
+        public List<Event> GetAllEvents()
+        {
+            return _repository.GetAllEvents();
+        }
+
         public Event GetEventById(int eventId)
         {
             return _repository.GetEventById(eventId);

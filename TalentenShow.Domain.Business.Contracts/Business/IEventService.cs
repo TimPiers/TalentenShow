@@ -10,6 +10,7 @@ namespace TalentenShow.Domain.Business.Contracts.Business
     public interface IEventService
     {
 
+        List<Event> GetAllEvents();
         List<Event> GetAllActiveEvents();
         Event GetEventById(int eventId);
 

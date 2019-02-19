@@ -33,6 +33,16 @@ namespace TalentenShow.WebApi.Controllers {
         }
 
         /// <summary>
+        /// Get all active events.
+        /// </summary>
+        [Route("api/events/all")]
+        [HttpGet]
+        public List<Event> GetAllEvents()
+        {
+            return _service.GetAllEvents();
+        }
+
+        /// <summary>
         /// Get event by Id
         /// </summary>
         [Route("api/events/get/{eventId}")]

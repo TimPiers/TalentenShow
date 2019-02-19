@@ -30,6 +30,23 @@ namespace TalentenShow.Repository.Events
             return result;
         }
 
+        public List<Event> GetAllEvents()
+        {
+            List<Event> result = new List<Event>();
+
+            using (var context = CreateContext())
+            {
+                result = context.Set<Event>()
+                .AsNoTracking()
+                .Include(x => x.Location)
+                .Include(x => x.Theme)
+                .OrderByDescending(ev => ev.EventEndDate)
+                .ToList();
+            }
+
+            return result;
+        }
+
         public Event GetEventById(int eventId)
         {
             Event result = null;

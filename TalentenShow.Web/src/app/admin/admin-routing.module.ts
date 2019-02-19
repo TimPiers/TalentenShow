@@ -3,6 +3,10 @@ import { Routes, RouterModule } from '@angular/router';
 import { AdminComponent } from './admin.component';
 import { AdminHomePageComponent } from './admin-home-page/admin-home-page.component';
 import { EventsComponent } from './events/events.component';
+import { LocationPageComponent } from './events/location-page/location-page.component';
+import { ThemePageComponent } from './events/theme-page/theme-page.component';
+import { EventPageComponent } from './events/event-page/event-page.component';
+
 
 const routes: Routes = [
   {
@@ -10,7 +14,10 @@ const routes: Routes = [
     component: AdminComponent,
     children: [
       { path: '', component: AdminHomePageComponent },
-      { path: 'events', component: EventsComponent }
+      { path: 'events', component: EventsComponent },
+      { path: 'events/event/manage', component: EventPageComponent },
+      { path: 'events/location/manage', component: LocationPageComponent },
+      { path: 'events/theme/manage', component: ThemePageComponent }
     ]
   },
 ];

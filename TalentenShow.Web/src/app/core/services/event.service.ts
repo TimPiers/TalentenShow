@@ -12,6 +12,10 @@ export class EventService extends BaseService {
     super();
   }
 
+  getAllEvents() {
+    return this.httpClient.get<Array<TalentEvent>>(`${this.env.apiUrl}/events/all`);
+  }
+
   getAllActiveEvents() {
     return this.httpClient.get<Array<TalentEvent>>(`${this.env.apiUrl}/events/active`);
   }

@@ -1,3 +1,38 @@
-<p>
-  location-page works!
-</p>
+<div class="row mt-3">
+  <div class="col-12">
+    <button class="btn btn-primary mr-2">Create location</button>
+    <button class="btn btn-primary mr-2" (click)="getLocations()"><i class="fa fa-refresh"></i> Refresh locations</button>
+    <div class="col-sm-4" style="display:inline-block">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text"><i class="fa fa-search"></i></div>
+        </div>
+        <input type="text" class="form-control" id="inputSearch" placeholder="Zoeken..." (keyup)="search(inputSearch.value)" (blur)="search(inputSearch.value)" #inputSearch>
+      </div>
+    </div>
+  </div>
+  <table class="table mt-2">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Adress</th>
+        <th scope="col">Postal Code</th>
+        <th scope="col">Place</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="filteredLocations">
+      <tr *ngFor="let location of filteredLocations">
+        <td style="width: 30px;"><i class="fa fa-edit clickable"></i></td>
+        <td style="width: 30px;"><i class="fa fa-trash clickable"></i></td>
+        <td>{{ location.Id }}</td>
+        <td>{{ location.Name }}</td>
+        <td>{{ location.Adress }}</td>
+        <td>{{ location.PostalCode }}</td>
+        <td>{{ location.Place }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
