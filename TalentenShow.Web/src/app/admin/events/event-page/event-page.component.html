@@ -28,7 +28,7 @@
     </thead>
     <tbody *ngIf="filteredEvents">
       <tr *ngFor="let event of filteredEvents">
-        <td style="width: 30px;"><i class="fa fa-edit clickable"></i></td>
+        <td style="width: 30px;"><i class="fa fa-edit clickable" data-toggle="modal" data-target="#updateModal" (click)="createUpdateLocation(event)"></i></td>
         <td style="width: 30px;"><i class="fa fa-trash clickable"></i></td>
         <td>{{ event.Id }}</td>
         <td>{{ event.Name }}</td>
@@ -45,7 +45,7 @@
 
 <!-- Modal -->
 <div class="modal fade" id="updateModal" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">{{ title }}</h5>
@@ -57,36 +57,70 @@
         <form [formGroup]="form">
 
           <input type="text" class="form-control" formControlName="Id" id="inputId" hidden>
+          <div class="row">
+            <div class="form-group col-12 col-lg-8">
+              <label for="inputName">Name</label>
+              <input type="text" class="form-control" formControlName="Name" id="inputName" placeholder="Voer een naam in...">
+            </div>
 
-          <div class="form-group">
-            <label for="inputName">Name</label>
-            <input type="text" class="form-control" formControlName="Name" id="inputName" placeholder="Voer een naam in...">
+            <div class="form-group col-12 col-lg-4">
+              <label for="inputEventCode">Event Code</label>
+              <input type="text" class="form-control" formControlName="EventCode" id="inputEventCode" placeholder="Voer een eventcode in...">
+            </div>
+
+            <div class="form-group col-12">
+              <label for="inputDescription">Beschrijving</label>
+              <textarea class="form-control" formControlName="Description" id="inputDescription" rows="5" placeholder="Voer een beschrijving in..."></textarea>
+            </div>
+
+            <div class="form-group col-12 col-lg-6">
+              <label for="inputEntryStartDate">Aanmelding datum van</label>
+              <input type="text" class="form-control" formControlName="EntryStartDate" id="inputEntryStartDate" placeholder="Voer een start datum in...">
+            </div>
+
+            <div class="form-group col-12 col-lg-6">
+              <label for="inputEntryEndDate">Aanmelding datum tot</label>
+              <input type="text" class="form-control" formControlName="EntryEndDate" id="inputEntryEndDate" placeholder="Voer een eind datum in...">
+            </div>
+
+            <div class="form-group col-12 col-lg-6">
+              <label for="inputEventStartDate">Evenement datum van</label>
+              <input type="text" class="form-control" formControlName="EventStartDate" id="inputEventStartDate" placeholder="Voer een start datum in...">
+            </div>
+
+            <div class="form-group col-12 col-lg-6">
+              <label for="inputEventEndDate">Evenement datum tot</label>
+              <input type="text" class="form-control" formControlName="EventEndDate" id="inputEventEndDate" placeholder="Voer een eind datum in...">
+            </div>
+
+            <div class="form-group col-12 col-lg-6">
+              <label for="inputLocaties">Locatie</label>
+              <select class="form-control" formControlName="Location" id="inputLocaties" *ngIf="locations">
+                <option value="null">Maak een keuze</option>
+                <option *ngFor="let location of locations" value="{{location.Id}}">{{location.Name}}</option>
+              </select>
+            </div>
+
+            <div class="form-group col-12 col-lg-6">
+              <label for="inputThemes">Thema's</label>
+              <select class="form-control" formControlName="Theme" id="inputThemes" *ngIf="themes">
+                <option value="null">Maak een keuze</option>
+                <option *ngFor="let theme of themes" value="{{theme.Id}}">{{theme.Name}}</option>
+              </select>
+            </div>
           </div>
 
-          <div class="form-group">
-            <label for="inputDescription">Beschrijving</label>
-            <textarea class="form-control" formControlName="Description" id="inputDescription" rows="6" placeholder="Voer een beschrijving in..."></textarea>
-          </div>
 
-          <div class="form-group">
-            <label for="inputName">Event Code</label>
-            <input type="text" class="form-control" formControlName="EventCode" id="inputEventCode" placeholder="Voer een eventcode in...">
-          </div>
+          <!--
 
-          <div class="form-group">
-            <label for="inputName">Postalcode</label>
-            <input type="text" class="form-control" formControlName="EntryStartDate" id="inputEntryStartDate" placeholder="Voer een start datum in...">
-          </div>
+  -->
 
-          <div class="form-group">
-            <label for="inputName">Place</label>
-            <input type="text" class="form-control" formControlName="EntryEndDate" id="inputEntryEndDate" placeholder="Voer een eind datum in...">
-          </div>
+
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Discard</button>
-        <button type="submit" class="btn btn-primary" data-dismiss="modal" (click)="saveLocation()">Save Theme</button>
+        <button type="submit" class="btn btn-primary" data-dismiss="modal" (click)="saveLocation()">Save Event</button>
       </div>
     </div>
   </div>

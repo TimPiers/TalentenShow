@@ -71,7 +71,7 @@ export class ThemePageComponent implements OnInit {
   }
 
   getThemes() {
-    this.themeService.getAllLocations().subscribe(x => {
+    this.themeService.getAllThemes().subscribe(x => {
       this.themes = x;
       this.filteredThemes = this.themes;
     });

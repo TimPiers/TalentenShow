@@ -12,7 +12,7 @@ export class ThemeService extends BaseService {
     super();
   }
 
-  getAllLocations() {
+  getAllThemes() {
     return this.httpClient.get<Array<Theme>>(`${this.env.apiUrl}/themes/all`);
   }
 
