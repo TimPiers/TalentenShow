@@ -81,6 +81,8 @@
     <Content Include="src\app\admin\events\location-page\location-page.component.html" />
     <Content Include="src\app\admin\events\theme-page\theme-page.component.css" />
     <Content Include="src\app\admin\events\theme-page\theme-page.component.html" />
+    <Content Include="src\app\admin\manage-participants\manage-participants.component.css" />
+    <Content Include="src\app\admin\manage-participants\manage-participants.component.html" />
     <Content Include="src\app\app.component.css" />
     <Content Include="src\app\app.component.html" />
     <Content Include="src\app\web\event-page\event-page.component.css" />
@@ -131,10 +133,12 @@
     <TypeScriptCompile Include="src\app\admin\events\events.component.ts" />
     <TypeScriptCompile Include="src\app\admin\events\location-page\location-page.component.ts" />
     <TypeScriptCompile Include="src\app\admin\events\theme-page\theme-page.component.ts" />
+    <TypeScriptCompile Include="src\app\admin\manage-participants\manage-participants.component.ts" />
     <TypeScriptCompile Include="src\app\app-routing.module.ts" />
     <TypeScriptCompile Include="src\app\app.component.ts" />
     <TypeScriptCompile Include="src\app\app.module.ts" />
     <TypeScriptCompile Include="src\app\core\core.module.ts" />
+    <TypeScriptCompile Include="src\app\core\services\person.service.ts" />
     <TypeScriptCompile Include="src\app\core\services\theme.service.ts" />
     <TypeScriptCompile Include="src\app\core\services\location.service.ts" />
     <TypeScriptCompile Include="src\app\core\services\event.service.ts" />

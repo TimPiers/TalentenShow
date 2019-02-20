@@ -7,6 +7,7 @@ import { WebHomePageComponent } from './web-home-page/web-home-page.component';
 import { NewsPageComponent } from './news-page/news-page.component';
 import { EventPageComponent } from './event-page/event-page.component';
 import { ViewEventPageComponent } from './view-event-page/view-event-page.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,8 @@ import { ViewEventPageComponent } from './view-event-page/view-event-page.compon
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     WebRoutingModule
   ],
   providers: [],

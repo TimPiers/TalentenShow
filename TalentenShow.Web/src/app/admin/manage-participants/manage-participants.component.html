@@ -1,0 +1,73 @@
+<div class="row mt-3">
+  <div class="col-12">
+    <button class="btn btn-primary mr-2" (click)="getPersons()"><i class="fa fa-refresh"></i> Refresh participants</button>
+    <div class="col-sm-4" style="display:inline-block">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text"><i class="fa fa-search"></i></div>
+        </div>
+        <input type="text" class="form-control" id="inputSearch" placeholder="Zoeken..." (keyup)="search(inputSearch.value)" (blur)="search(inputSearch.value)" #inputSearch>
+      </div>
+    </div>
+  </div>
+  <table class="table mt-2">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Birthdate</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="persons">
+      <tr *ngFor="let person of filteredPersons">
+        <td style="width: 30px;"><i class="fa fa-search clickable" data-toggle="modal" data-target="#Modal" (click)="showPerson(person)"></i></td>
+        <td>{{ person.Id }}</td>
+        <td>{{ person.FirstName }} {{ person.Prefix }} {{ person.LastName }}</td>
+        <td>{{ convertDate(person.BirthDate) }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="Modal" tabindex="-1" role="dialog" *ngIf="selectedPerson">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Bekijken: {{ selectedPerson.FirstName }} {{ selectedPerson.Prefix }} {{ selectedPerson.LastName }}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"><i class="fa fa-times-circle"></i></span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Voornaam: {{ selectedPerson.FirstName }}</p>
+        <p>Tussenvoegsel: {{ selectedPerson.Prefix }}</p>
+        <p>Achternaam: {{ selectedPerson.LastName }}</p>
+        <p>Geboortedatum: {{ convertDate(selectedPerson.BirthDate) }}</p>
+        <hr />
+        <p>Deelgenomen aan:</p>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Evenement</th>
+              <th scope="col">Evenement code</th>
+              <th scope="col">Datum deelname</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let event of selectedPerson.ParticipatedEvents">
+              <td>{{ event.Name }}</td>
+              <td>{{ event.EventCode }}</td>
+              <td>{{ convertDate(event.EventStartDate) }}</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

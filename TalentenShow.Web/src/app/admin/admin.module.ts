@@ -8,6 +8,7 @@ import { LocationPageComponent } from './events/location-page/location-page.comp
 import { EventPageComponent } from './events/event-page/event-page.component';
 import { EventsComponent } from './events/events.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ManageParticipantsComponent } from './manage-participants/manage-participants.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ThemePageComponent,
     LocationPageComponent,
     EventPageComponent,
-    EventsComponent
+    EventsComponent,
+    ManageParticipantsComponent
   ],
   imports: [
     BrowserModule,

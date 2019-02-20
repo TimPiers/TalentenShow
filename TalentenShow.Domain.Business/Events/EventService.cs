@@ -19,6 +19,11 @@ namespace TalentenShow.Domain.Business.Events
             _repository = repository;
         }
 
+        public int DeleteEvent(Event eventObj)
+        {
+            return _repository.DeleteEvent(eventObj);
+        }
+
         public List<Event> GetAllActiveEvents()
         {
             return _repository.GetAllActiveEvents();
@@ -32,6 +37,13 @@ namespace TalentenShow.Domain.Business.Events
         public Event GetEventById(int eventId)
         {
             return _repository.GetEventById(eventId);
+        }
+
+        public int SaveEvent(Event eventObj)
+        {
+            eventObj.Location = null;
+            eventObj.Theme = null;
+            return _repository.SaveEvent(eventObj);
         }
     }
 }

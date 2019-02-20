@@ -1,0 +1,13 @@
+.table {
+  background-color: white;
+}
+
+th {
+  background-color: #74b9ff;
+  color: white;
+  border-top: none;
+}
+
+tr {
+  background-color: white;
+}

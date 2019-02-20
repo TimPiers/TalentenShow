@@ -53,5 +53,24 @@ namespace TalentenShow.WebApi.Controllers {
 
         }
 
+        /// <summary>
+        /// Save a event
+        /// </summary>
+        [Route("api/events/save")]
+        [HttpPost]
+        public int SaveEvent(Event eventObj)
+        {
+            return _service.SaveEvent(eventObj);
+        }
+
+        /// <summary>
+        /// Delete a event
+        /// </summary>
+        [Route("api/events/delete")]
+        [HttpPost]
+        public int DeleteEvent(Event eventObj)
+        {
+            return _service.DeleteEvent(eventObj);
+        }
     }
 }

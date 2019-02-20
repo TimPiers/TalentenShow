@@ -13,6 +13,7 @@ namespace TalentenShow.Domain.Business.Contracts.Business
         List<Event> GetAllEvents();
         List<Event> GetAllActiveEvents();
         Event GetEventById(int eventId);
-
+        int SaveEvent(Event eventObj);
+        int DeleteEvent(Event eventObj);
     }
 }

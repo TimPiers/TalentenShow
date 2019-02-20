@@ -12,6 +12,18 @@ namespace TalentenShow.Repository.Events
 {
     public class EventRepository : BaseRepository<Event>, IEventRepository
     {
+        public int DeleteEvent(Event eventObj)
+        {
+            using (var context = CreateContext())
+            {
+                context.Set<Event>().Attach(eventObj);
+                context.Entry(eventObj).State = EntityState.Deleted;
+                context.SaveChanges();
+            }
+
+            return 1;
+        }
+
         public List<Event> GetAllActiveEvents()
         {
             List<Event> result = new List<Event>();
@@ -63,6 +75,25 @@ namespace TalentenShow.Repository.Events
             }
 
             return result;
+        }
+
+        public int SaveEvent(Event eventObj)
+        {
+            using (var context = CreateContext())
+            {
+                if (eventObj.Id > 0)
+                { // Update
+                    context.Set<Event>().Attach(eventObj);
+                    context.Entry(eventObj).State = EntityState.Modified;
+                }
+                else
+                { // New
+                    context.Set<Event>().Add(eventObj);
+                }
+                context.SaveChanges();
+            }
+
+            return 1;
         }
     }
 }

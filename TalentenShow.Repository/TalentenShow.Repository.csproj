@@ -55,6 +55,8 @@
     <Compile Include="TalentenShowContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Themes\ThemeRepository.cs" />
+    <Compile Include="Users\ParticipantEventRepository.cs" />
+    <Compile Include="Users\PersonRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

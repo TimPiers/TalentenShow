@@ -29,7 +29,7 @@
     <tbody *ngIf="filteredEvents">
       <tr *ngFor="let event of filteredEvents">
         <td style="width: 30px;"><i class="fa fa-edit clickable" data-toggle="modal" data-target="#updateModal" (click)="createUpdateLocation(event)"></i></td>
-        <td style="width: 30px;"><i class="fa fa-trash clickable"></i></td>
+        <td style="width: 30px;"><i class="fa fa-trash clickable" (click)="deleteEvent(event)"></i></td>
         <td>{{ event.Id }}</td>
         <td>{{ event.Name }}</td>
         <td>{{ shortenDescription(event.Description) }}</td>
@@ -95,7 +95,7 @@
 
             <div class="form-group col-12 col-lg-6">
               <label for="inputLocaties">Locatie</label>
-              <select class="form-control" formControlName="Location" id="inputLocaties" *ngIf="locations">
+              <select class="form-control" formControlName="LocationId" id="inputLocaties" *ngIf="locations">
                 <option value="null">Maak een keuze</option>
                 <option *ngFor="let location of locations" value="{{location.Id}}">{{location.Name}}</option>
               </select>
@@ -103,7 +103,7 @@
 
             <div class="form-group col-12 col-lg-6">
               <label for="inputThemes">Thema's</label>
-              <select class="form-control" formControlName="Theme" id="inputThemes" *ngIf="themes">
+              <select class="form-control" formControlName="ThemeId" id="inputThemes" *ngIf="themes">
                 <option value="null">Maak een keuze</option>
                 <option *ngFor="let theme of themes" value="{{theme.Id}}">{{theme.Name}}</option>
               </select>
@@ -120,7 +120,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Discard</button>
-        <button type="submit" class="btn btn-primary" data-dismiss="modal" (click)="saveLocation()">Save Event</button>
+        <button type="submit" class="btn btn-primary" data-dismiss="modal" (click)="saveEvent()">Save Event</button>
       </div>
     </div>
   </div>

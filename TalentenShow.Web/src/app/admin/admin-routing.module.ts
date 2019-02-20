@@ -6,6 +6,7 @@ import { EventsComponent } from './events/events.component';
 import { LocationPageComponent } from './events/location-page/location-page.component';
 import { ThemePageComponent } from './events/theme-page/theme-page.component';
 import { EventPageComponent } from './events/event-page/event-page.component';
+import { ManageParticipantsComponent } from './manage-participants/manage-participants.component';
 
 
 const routes: Routes = [
@@ -17,7 +18,8 @@ const routes: Routes = [
       { path: 'events', component: EventsComponent },
       { path: 'events/event/manage', component: EventPageComponent },
       { path: 'events/location/manage', component: LocationPageComponent },
-      { path: 'events/theme/manage', component: ThemePageComponent }
+      { path: 'events/theme/manage', component: ThemePageComponent },
+      { path: 'participants', component: ManageParticipantsComponent }
     ]
   },
 ];

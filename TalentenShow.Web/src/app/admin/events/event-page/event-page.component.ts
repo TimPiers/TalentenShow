@@ -57,8 +57,8 @@ export class EventPageComponent implements OnInit {
       "EntryEndDate": [""],
       "EventStartDate": [""],
       "EventEndDate": [""],
-      "Location": [null],
-      "Theme": [null]
+      "LocationId": [null],
+      "ThemeId": [null]
     });
 
   }
@@ -79,32 +79,28 @@ export class EventPageComponent implements OnInit {
       "EntryEndDate": [this.convertDate(event.EntryEndDate.toString())],
       "EventStartDate": [this.convertDate(event.EventStartDate.toString())],
       "EventEndDate": [this.convertDate(event.EventEndDate.toString())],
-      "Location": [event.LocationId],
-      "Theme": [event.ThemeId]
+      "LocationId": [event.LocationId],
+      "ThemeId": [event.ThemeId]
     });
-    console.log(this.form.controls.Location.value);
   }
 
-  saveLocation() {
-    //if (this.form.controls.Name.pristine || this.form.controls.Adress.pristine
-    //  || this.form.controls.PostalCode.pristine || this.form.controls.Place.pristine) {
-    //  return;
-    //}
+  saveEvent() {
+    let event: TalentEvent = this.form.value;
+    console.log(event);
+    if (!event.Name || !event.Description || !event.EntryEndDate || !event.EntryStartDate || !event.EventCode
+      || !event.EventEndDate || !event.EventStartDate || event.LocationId.toString() === "null" || event.ThemeId.toString() === "null") {
+      return;
+    }
 
-    //let event: TalentEvent = this.form.value;
-    //if (location.Name.length === 0 || location.Adress.length === 0
-    //  || location.PostalCode.length === 0 || location.Place.length === 0) {
-    //  return;
-    //}
-    //this.locationService.saveLocation(location).subscribe(x => {
-    //  this.getLocations();
-    //});
+    this.eventService.saveEvent(event).subscribe(x => {
+      this.getEvents();
+    });
   }
 
-  deleteLocation(event: TalentEvent) {
-    //this.eventService.deleteEvent(event).subscribe(x => {
-    //  this.getEvents();
-    //});
+  deleteEvent(event: TalentEvent) {
+    this.eventService.deleteEvent(event).subscribe(x => {
+      this.getEvents();
+    });
   }
 
   shortenDescription(content: string) {

@@ -24,5 +24,21 @@ export class EventService extends BaseService {
     return this.httpClient.get<TalentEvent>(`${this.env.apiUrl}/events/get/${eventId}`);
   }
 
+  saveEvent(event: TalentEvent) {
+    return this.httpClient.post<TalentEvent>(`${this.env.apiUrl}/events/save`, event);
+  }
 
+  deleteEvent(event: TalentEvent) {
+    return this.httpClient.post<TalentEvent>(`${this.env.apiUrl}/events/delete`, event);
+  }
+
+  saveParticipant(participant, event: TalentEvent) {
+    let participantEvent = {
+      Id: 0,
+      Event: event,
+      Participant: participant,
+      Code: null
+    }
+    return this.httpClient.post<any>(`${this.env.apiUrl}/participant/save`, participantEvent);
+  }
 }

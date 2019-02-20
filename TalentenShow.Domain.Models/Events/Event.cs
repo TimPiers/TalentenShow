@@ -5,11 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 using TalentenShow.Domain.Models.Locations;
 using TalentenShow.Domain.Models.Themes;
+using TalentenShow.Domain.Models.Users;
 
 namespace TalentenShow.Domain.Models.Events
 {
     public class Event
     {
+
+        public Event()
+        {
+            Participants = new List<Participant>();
+        }
 
         public int Id { get; set; }
         public string Name { get; set; }
@@ -28,5 +34,6 @@ namespace TalentenShow.Domain.Models.Events
         public int ThemeId { get; set; }
         public Theme Theme { get; set; }
 
+        public List<Participant> Participants { get; set; }
     }
 }
